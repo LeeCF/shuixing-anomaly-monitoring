@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>水星家纺 · 异常交易实时监测</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="shell-bar">
+    <span class="shell-logo">◆ 水星家纺</span>
+    <span class="shell-title">异常交易实时监测</span>
+    <span class="shell-sub">AI 风控 · 规则 + 统计 + 画像三层联动</span>
+  </header>
+
+  <main class="page">
+    <!-- 列表视图 -->
+    <section id="view-list" class="view">
+      <div class="toolbar">
+        <h2>异常告警</h2>
+        <button id="btn-detect" class="btn btn-emphasized">▶ 触发实时检测</button>
+      </div>
+      <div id="detect-status" class="detect-status hidden"></div>
+      <table class="alert-table">
+        <thead>
+          <tr><th>告警编号</th><th>风险评分</th><th>级别</th><th>场景</th><th>涉及方</th><th>时间</th></tr>
+        </thead>
+        <tbody id="alert-rows"></tbody>
+      </table>
+    </section>
+
+    <!-- 详情视图 -->
+    <section id="view-detail" class="view hidden">
+      <button id="btn-back" class="btn btn-transparent">← 返回列表</button>
+      <div id="card"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

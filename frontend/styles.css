@@ -1,0 +1,86 @@
+:root{
+  --sap-brand:#0070f2; --sap-brand-dark:#0057d2;
+  --sap-shell:#354a5f; --sap-bg:#f5f6f7; --sap-tile:#fff;
+  --sap-border:#d9d9d9; --sap-text:#1d2d3e; --sap-text2:#556b82;
+  --risk-high:#d20a0a; --risk-mid:#e76500; --risk-low:#e9730c;
+  --ok:#30914c;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:"72","72override",Arial,Helvetica,sans-serif;
+  background:var(--sap-bg);color:var(--sap-text);}
+.hidden{display:none!important;}
+
+.shell-bar{display:flex;align-items:baseline;gap:16px;background:var(--sap-shell);
+  color:#fff;padding:12px 24px;}
+.shell-logo{font-weight:700;font-size:16px;}
+.shell-title{font-size:15px;}
+.shell-sub{font-size:12px;color:#c4d0dc;margin-left:auto;}
+
+.page{max-width:1080px;margin:24px auto;padding:0 24px;}
+.toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.toolbar h2{font-size:18px;margin:0;}
+
+.btn{font-family:inherit;font-size:14px;border-radius:6px;padding:8px 16px;
+  cursor:pointer;border:1px solid var(--sap-brand);background:#fff;color:var(--sap-brand);}
+.btn-emphasized{background:var(--sap-brand);color:#fff;}
+.btn-emphasized:hover{background:var(--sap-brand-dark);}
+.btn-transparent{border-color:transparent;background:transparent;margin-bottom:12px;}
+
+.detect-status{background:#eaf3ff;border:1px solid #b3d4ff;border-radius:6px;
+  padding:10px 14px;margin-bottom:12px;color:var(--sap-brand-dark);}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid #b3d4ff;
+  border-top-color:var(--sap-brand);border-radius:50%;animation:spin .7s linear infinite;
+  vertical-align:middle;margin-right:8px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.alert-table{width:100%;border-collapse:collapse;background:var(--sap-tile);
+  border:1px solid var(--sap-border);border-radius:8px;overflow:hidden;}
+.alert-table th{background:#fafafa;text-align:left;font-size:12px;color:var(--sap-text2);
+  padding:10px 14px;border-bottom:1px solid var(--sap-border);}
+.alert-table td{padding:12px 14px;border-bottom:1px solid #eee;font-size:14px;}
+.alert-table tbody tr{cursor:pointer;}
+.alert-table tbody tr:hover{background:#f0f7ff;}
+
+.score{display:inline-block;min-width:44px;text-align:center;font-weight:700;
+  color:#fff;border-radius:12px;padding:2px 8px;}
+.score.high{background:var(--risk-high);}
+.score.mid{background:var(--risk-mid);}
+.score.low{background:var(--ok);}
+.level-badge{font-size:12px;padding:2px 8px;border-radius:4px;border:1px solid currentColor;}
+.level-高{color:var(--risk-high);}
+.level-中{color:var(--risk-mid);}
+.level-低{color:var(--ok);}
+
+/* 告警卡 */
+.card{background:var(--sap-tile);border:1px solid var(--sap-border);border-radius:8px;
+  padding:0 0 20px;overflow:hidden;}
+.card-head{display:flex;align-items:center;gap:16px;background:#fafafa;
+  padding:16px 20px;border-bottom:1px solid var(--sap-border);}
+.card-head .big-score{font-size:34px;font-weight:800;}
+.card-head .meta{display:flex;flex-direction:column;}
+.card-head .alert-no{font-size:13px;color:var(--sap-text2);}
+.card-head .scenario{font-size:17px;font-weight:600;}
+.card-sec{padding:16px 20px;border-bottom:1px solid #eee;}
+.card-sec h3{font-size:13px;color:var(--sap-brand);margin:0 0 10px;
+  text-transform:none;letter-spacing:.3px;}
+.desc-line{margin:3px 0;}
+.desc-line .k{color:var(--sap-text2);display:inline-block;min-width:64px;}
+
+.layers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.layer-tile{background:#f7f9fb;border:1px solid var(--sap-border);border-radius:6px;padding:12px;}
+.layer-tile .lt{font-size:12px;color:var(--sap-brand-dark);font-weight:700;margin-bottom:6px;}
+.layer-tile .lb{font-size:13px;line-height:1.5;}
+
+.case{padding:8px 0;border-bottom:1px dashed #e5e5e5;font-size:13px;}
+.case:last-child{border-bottom:none;}
+.case .when{color:var(--sap-text2);margin-right:8px;}
+
+.action{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:13px;}
+.urg{flex:none;font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;color:#fff;}
+.urg-立即{background:var(--risk-high);}
+.urg-24h内{background:var(--risk-mid);}
+.urg-可选{background:#8a99a8;}
+
+.parties span{display:inline-block;background:#eef1f4;border-radius:12px;
+  padding:3px 10px;margin-right:8px;font-size:13px;}
+.lineage{font-size:12px;color:var(--sap-text2);}
